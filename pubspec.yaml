@@ -17,7 +17,7 @@ dependencies:
   #for UI
   carousel_slider: ^4.2.1
   responsive_sizer: ^3.2.0
-  fade_shimmer: 
+  fade_shimmer: ^2.2.0
   cached_network_image: ^3.3.0
   flutter_svg: ^2.0.9
 
@@ -26,6 +26,9 @@ dependencies:
   
   #api-calls
   http: ^1.1.0
+  flutter_dotenv: ^5.1.0
+
+  #For Caching
   flutter_cache_manager: ^3.3.1
   hive_flutter: ^1.1.0
   hive:
@@ -54,6 +57,7 @@ flutter:
   assets:
     - assets/icons/
     - assets/png/
+    - assets/.env
     
 
   # An image asset can refer to one or more resolution-specific "variants", see

@@ -1,9 +1,10 @@
 import 'package:movie_app/utils/export_files.dart';
 
-Future<void> main() async {
+void main() async {
   await Hive.initFlutter();
   Hive.registerAdapter(MovieAdapter());
   await Hive.openBox<Movie>('favorites');
+  await dotenv.load(fileName: "assets/.env");
   runApp(const MyApp());
 }
 

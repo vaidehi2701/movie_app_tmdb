@@ -15,6 +15,7 @@ export 'package:movie_app/utils/hive_adapter.dart';
 export 'package:flutter_svg/flutter_svg.dart';
 export 'package:cached_network_image/cached_network_image.dart';
 export 'package:fade_shimmer/fade_shimmer.dart';
+export 'package:flutter_dotenv/flutter_dotenv.dart';
 
 //Home Screen
 export 'package:movie_app/feature/home/bloc/home_state.dart';

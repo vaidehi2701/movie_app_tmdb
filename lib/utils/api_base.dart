@@ -1,10 +1,12 @@
-class ApiUrls {
-  static const baseUrl = "https://api.themoviedb.org/3/";
-  static const imageBaseUrl = "https://image.tmdb.org/t/p/original/";
-  static const apiKey = "c3f030a72294caf3cfbc0675e82aa176";
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
-  static const trendingMovies = "${baseUrl}trending/movie/day?api_key=$apiKey";
-  static const popularMovies = "${baseUrl}movie/popular?api_key=$apiKey";
-  static const upcomingMovies = "${baseUrl}movie/upcoming?api_key=$apiKey";
-  static const topRatedMovies = "${baseUrl}movie/top_rated?api_key=$apiKey";
+class ApiUrls {
+  static String trendingMovies =
+      "${dotenv.env["baseUrl"]}trending/movie/day?api_key=${dotenv.env["apiKey"]}";
+  static String popularMovies =
+      "${dotenv.env["baseUrl"]}movie/popular?api_key=${dotenv.env["apiKey"]}";
+  static String upcomingMovies =
+      "${dotenv.env["baseUrl"]}movie/upcoming?api_key=${dotenv.env["apiKey"]}";
+  static String topRatedMovies =
+      "${dotenv.env["baseUrl"]}movie/top_rated?api_key=${dotenv.env["apiKey"]}";
 }

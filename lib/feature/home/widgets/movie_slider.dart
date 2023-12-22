@@ -43,7 +43,7 @@ class MovieSlider extends StatelessWidget {
                         width: 200,
                         child: CachedNetworkImage(
                           imageUrl:
-                              '${ApiUrls.imageBaseUrl}${movieData[itemIndex].posterPath}',
+                              '${dotenv.env['imageBaseUrl']}${movieData[itemIndex].posterPath}',
                           progressIndicatorBuilder:
                               (context, url, downloadProgress) => FadeShimmer(
                             width: 12.w,

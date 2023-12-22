@@ -86,7 +86,7 @@ class _CategoryFullScreenState extends State<CategoryFullScreen> {
                             child: CachedNetworkImage(
                               height: 13.h,
                               width: 40.w,
-                              imageUrl: ApiUrls.imageBaseUrl +
+                              imageUrl: dotenv.env['imageBaseUrl']! +
                                   results[index].posterPath,
                               progressIndicatorBuilder:
                                   (context, url, downloadProgress) =>

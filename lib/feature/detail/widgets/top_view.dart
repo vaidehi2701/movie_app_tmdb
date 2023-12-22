@@ -14,7 +14,7 @@ class TopView extends StatelessWidget {
             height: 40.h,
             width: double.infinity,
             child: CachedNetworkImage(
-              imageUrl: ApiUrls.imageBaseUrl + movie.backDropPath,
+              imageUrl: dotenv.env['imageBaseUrl']! + movie.backDropPath,
               progressIndicatorBuilder: (context, url, downloadProgress) =>
                   FadeShimmer(
                 width: 12.w,
@@ -66,7 +66,7 @@ class TopView extends StatelessWidget {
                     height: 20.h,
                     width: 30.w,
                     child: CachedNetworkImage(
-                      imageUrl: ApiUrls.imageBaseUrl + movie.posterPath,
+                      imageUrl: dotenv.env['imageBaseUrl']! + movie.posterPath,
                       progressIndicatorBuilder:
                           (context, url, downloadProgress) => FadeShimmer(
                         width: 30.w,
