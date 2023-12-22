@@ -12,6 +12,9 @@ A Flutter application that leverages TMDB API to showcase movies. The app has th
 
 ## Media
 
+<img src="https://github.com/vaidehi2701/movie_app_tmdb/assets/55477266/f4501ee8-6267-4535-84a6-280868b613e8" width="23%"></img>    
+<img src="https://github.com/vaidehi2701/movie_app_tmdb/assets/55477266/a44d0f64-76fc-4020-b6ce-3a1249cf308a" width="23%"></img>    
+<img src="https://github.com/vaidehi2701/movie_app_tmdb/assets/55477266/08a3849e-b6e0-4c11-9946-f2631410365f" width="23%"></img>
 
 
 ## Setup
