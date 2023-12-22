@@ -17,3 +17,6 @@ export 'package:movie_app/feature/home/model/movie_model.dart';
 export 'package:movie_app/feature/home/widgets/movie_slider.dart';
 export 'package:movie_app/feature/home/widgets/movie_list.dart';
 export 'package:movie_app/feature/home/screens/home_screen.dart';
+
+//Detail Screen
+export 'package:movie_app/feature/detail/screens/detail_screen.dart';

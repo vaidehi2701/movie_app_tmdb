@@ -17,6 +17,8 @@ dependencies:
   #for UI
   carousel_slider: ^4.2.1
   responsive_sizer: ^3.2.0
+  fade_shimmer: ^2.2.0
+  cached_network_image: ^3.3.0
 
   #state_Managment
   flutter_bloc: ^8.1.3

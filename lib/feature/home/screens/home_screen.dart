@@ -1,3 +1,4 @@
+import 'package:movie_app/feature/home/widgets/title_text_view.dart';
 import 'package:movie_app/utils/export.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -50,31 +51,21 @@ class _HomeScreenUIState extends State<HomeScreenUI> {
           } else {
             return SingleChildScrollView(
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text(
-                    'Trending Movies',
-                  ),
+                  const TitleTextView(title: 'Trending Movies'),
                   MovieSlider(
                     movieData: trendingMovie,
                   ),
-                  SizedBox(height: 5.h),
-                  const Text(
-                    'Popular ',
-                  ),
+                  const TitleTextView(title: 'Popular'),
                   MoviesList(
                     movieList: popularMovie,
                   ),
-                  SizedBox(height: 5.h),
-                  const Text(
-                    'UpComing ',
-                  ),
+                  const TitleTextView(title: 'UpComing'),
                   MoviesList(
                     movieList: upComingMovie,
                   ),
-                  SizedBox(height: 5.h),
-                  const Text(
-                    'Top Rated ',
-                  ),
+                  const TitleTextView(title: 'Top Rated'),
                   MoviesList(
                     movieList: topRatedMovie,
                   )
