@@ -1,5 +1,5 @@
 import 'package:movie_app/feature/home/widgets/title_text_view.dart';
-import 'package:movie_app/utils/export.dart';
+import 'package:movie_app/utils/export_files.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -22,20 +22,16 @@ class HomeScreenUI extends StatefulWidget {
 }
 
 class _HomeScreenUIState extends State<HomeScreenUI> {
-  List<Movie> trendingMovie = [];
-  List<Movie> popularMovie = [];
-  List<Movie> upComingMovie = [];
-  List<Movie> topRatedMovie = [];
+  List<MovieModel> trendingMovie = [];
+  List<MovieModel> popularMovie = [];
+  List<MovieModel> upComingMovie = [];
+  List<MovieModel> topRatedMovie = [];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        title: const Text("Movie App"),
-        centerTitle: true,
-      ),
+      extendBodyBehindAppBar: true,
+      backgroundColor: AppColors.bgColor,
       body: BlocConsumer<HomeBloc, HomeState>(
         listener: (context, state) {
           if (state is MovieSuccessState) {
@@ -43,6 +39,10 @@ class _HomeScreenUIState extends State<HomeScreenUI> {
             popularMovie = state.popular;
             upComingMovie = state.upcoming;
             topRatedMovie = state.topRated;
+          }
+          if (state is MovieErrorState) {
+            ScaffoldMessenger.of(context)
+                .showSnackBar(SnackBar(content: Text(state.error)));
           }
         },
         builder: (context, state) {
@@ -53,19 +53,33 @@ class _HomeScreenUIState extends State<HomeScreenUI> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const TitleTextView(title: 'Trending Movies'),
+                  SizedBox(height: kToolbarHeight - 10.sp),
+                  SizedBox(
+                    height: kToolbarHeight,
+                    child: Center(
+                      child: Image.asset(ImageConstants.appLogo),
+                    ),
+                  ),
+                  CustomTitle(
+                      title: StringConstants.trendingMovies,
+                      movieList: trendingMovie),
                   MovieSlider(
                     movieData: trendingMovie,
                   ),
-                  const TitleTextView(title: 'Popular'),
+                  CustomTitle(
+                      title: StringConstants.popular, movieList: popularMovie),
                   MoviesList(
                     movieList: popularMovie,
                   ),
-                  const TitleTextView(title: 'UpComing'),
+                  CustomTitle(
+                      title: StringConstants.upComing,
+                      movieList: upComingMovie),
                   MoviesList(
                     movieList: upComingMovie,
                   ),
-                  const TitleTextView(title: 'Top Rated'),
+                  CustomTitle(
+                      title: StringConstants.topRated,
+                      movieList: topRatedMovie),
                   MoviesList(
                     movieList: topRatedMovie,
                   )

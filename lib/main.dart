@@ -1,6 +1,9 @@
-import 'package:movie_app/utils/export.dart';
+import 'package:movie_app/utils/export_files.dart';
 
-void main() {
+Future<void> main() async {
+  await Hive.initFlutter();
+  Hive.registerAdapter(MovieAdapter());
+  await Hive.openBox<Movie>('favorites');
   runApp(const MyApp());
 }
 
@@ -15,9 +18,9 @@ class MyApp extends StatelessWidget {
           title: 'Flutter Movie App',
           debugShowCheckedModeBanner: false,
           theme: ThemeData(
-            colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-            useMaterial3: true,
-          ),
+              colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+              useMaterial3: true,
+              fontFamily: "Poppins"),
           home: const HomeScreen(),
         );
       },

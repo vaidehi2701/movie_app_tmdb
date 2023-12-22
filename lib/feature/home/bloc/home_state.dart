@@ -9,10 +9,10 @@ class HomeLoadingState extends HomeState {
 }
 
 class MovieSuccessState extends HomeState {
-  final List<Movie> trending;
-  final List<Movie> popular;
-  final List<Movie> upcoming;
-  final List<Movie> topRated;
+  final List<MovieModel> trending;
+  final List<MovieModel> popular;
+  final List<MovieModel> upcoming;
+  final List<MovieModel> topRated;
 
   MovieSuccessState(
       {required this.trending,

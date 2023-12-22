@@ -1,12 +1,11 @@
-import 'package:cached_network_image/cached_network_image.dart';
-import 'package:movie_app/utils/export.dart';
+import 'package:movie_app/utils/export_files.dart';
 
 class MoviesList extends StatelessWidget {
   const MoviesList({
     super.key,
     required this.movieList,
   });
-  final List<Movie> movieList;
+  final List<MovieModel> movieList;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -39,10 +38,11 @@ class MoviesList extends StatelessWidget {
                     imageUrl:
                         '${ApiUrls.imageBaseUrl}${movieList[index].posterPath}',
                     progressIndicatorBuilder:
-                        (context, url, downloadProgress) => Padding(
-                      padding: EdgeInsets.all(0.sp),
-                      child: CircularProgressIndicator(
-                          value: downloadProgress.progress),
+                        (context, url, downloadProgress) => FadeShimmer(
+                      width: 12.w,
+                      height: 40.h,
+                      highlightColor: const Color(0xff22272f),
+                      baseColor: const Color(0xff20252d),
                     ),
                     errorWidget: (context, url, error) =>
                         const Icon(Icons.error),

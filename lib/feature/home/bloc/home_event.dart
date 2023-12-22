@@ -1,5 +1,5 @@
-abstract class Homeevent {}
+abstract class HomeEvent {}
 
-class FetchMoviesEvent extends Homeevent {
+class FetchMoviesEvent extends HomeEvent {
   FetchMoviesEvent();
 }

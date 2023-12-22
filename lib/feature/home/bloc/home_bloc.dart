@@ -1,13 +1,13 @@
-import 'package:movie_app/utils/export.dart';
+import 'package:movie_app/utils/export_files.dart';
 
-class HomeBloc extends Bloc<Homeevent, HomeState> {
+class HomeBloc extends Bloc<HomeEvent, HomeState> {
   HomeRepository movieRepository;
   HomeBloc({required this.movieRepository}) : super(HomeInitialState()) {
-    on<Homeevent>((event, emit) async {
+    on<HomeEvent>((event, emit) async {
       if (event is FetchMoviesEvent) {
         emit(HomeLoadingState());
         try {
-          final List<List<Movie>> moviesByCategory =
+          final List<List<MovieModel>> moviesByCategory =
               await movieRepository.fetchAllMovies();
 
           emit(MovieSuccessState(
@@ -16,7 +16,7 @@ class HomeBloc extends Bloc<Homeevent, HomeState> {
               upcoming: moviesByCategory[2],
               topRated: moviesByCategory[3]));
         } catch (e) {
-          emit(MovieErrorState('Failed to load movies'));
+          emit(MovieErrorState(e.toString()));
         }
       }
     });
