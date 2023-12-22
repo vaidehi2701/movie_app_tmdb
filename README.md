@@ -1,16 +1,25 @@
-# movie_app
+# Movie App With TMDB API integration.
 
-A new Flutter project.
+![Flutter](https://img.shields.io/badge/Flutter-3.13.9-blue?logo=flutter&logoColor=white)
+![Dart](https://img.shields.io/badge/Dart-2.14-green?logo=dart&logoColor=white)
 
-## Getting Started
+A Flutter application that leverages TMDB API to showcase movies. The app has the following features:
 
-This project is a starting point for a Flutter application.
+- **Home Screen:** Displays trending, popular, upcoming, and top-rated movies.
+- **Detail Screen:** Provides detailed information about a selected movie.
+- **Search Screen:** Enables local search functionality for movies.
+- **Favourite Movies:** Users can mark movies as their favorites.
 
-A few resources to get you started if this is your first Flutter project:
+## Media
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+## Setup
+
+1. Clone the repository.
+2. Run `flutter pub get` to install dependencies.
+3. Run the app using `flutter run`.
+4. Generate custom Hive adapter using:
+   `flutter pub run build_runner build`
+
+
